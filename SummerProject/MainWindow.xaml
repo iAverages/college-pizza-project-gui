@@ -1,0 +1,88 @@
+﻿<Window x:Class="SummerProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SummerProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel Orientation="Vertical" Grid.IsSharedSizeScope="True">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" SharedSizeGroup="Label"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0">First Name</Label>
+            <TextBox Grid.Column="1" Name="firstName" />
+            <Label Grid.Column="0" Grid.Row="1">Last Name</Label>
+            <TextBox  Grid.Column="1" Grid.Row="1" Name="lastName" />
+            <Label Grid.Column="0" Grid.Row="2">Address</Label>
+            <TextBox Grid.Column="1" Grid.Row="2" Name="address" />
+            <Label Grid.Column="0" Grid.Row="3">Phone</Label>
+            <TextBox Grid.Column="1" Grid.Row="3" Name="phoneNumber" />
+        </Grid>
+        <Separator Height="10"/>
+
+        <Grid Name="orders">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Name="ordersPlaceholderText">
+                No items added
+            </TextBlock>
+        </Grid>
+
+        <TextBlock Name="feesBlock">
+                No fees or discounts added
+        </TextBlock>
+        <TextBlock Name="orderTotal">Total:</TextBlock>
+        <Separator Height="10"/>
+        <Grid>
+            <Grid.Resources >
+                <Style TargetType="{x:Type Button}" >
+                    <Setter Property="Margin" Value="5,5,5,5" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="Label"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Click="AddCheese" Width="182" Content="Cheese"/>
+            <Button Grid.Column="1" Grid.Row="0" Click="AddHawaii" Width="182" Content="Hawaii"  />
+            <Button Grid.Column="0" Grid.Row="1" Click="AddPiri" Width="182" Content="Piri"/>
+            <Button Grid.Column="1" Grid.Row="1" Click="AddTheWorks" Width="182" Content="The Works"  />
+            <Button Grid.Column="0" Grid.Row="2" Click="AddMeat" Width="182" Content="Meat"/>
+            <Button Grid.Column="1" Grid.Row="2" Click="AddMexican" Width="182" Content="Mexican"  />
+            <Button Grid.Column="0" Grid.Row="3" Click="AddBBQ" Width="182" Content="BBQ"/>
+            <Button Grid.Column="1" Grid.Row="3" Click="AddMediteranian" Width="182" Content="Mediteranian" />
+        </Grid>
+        <Separator Height="10"/>
+        <Button Click="SaveOrder" Width="182" Content="Save Order"/>
+        <Button Click="NewOrder" Width="182" Content="New Order"/>
+    </StackPanel>
+</Window>
